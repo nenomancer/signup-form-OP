@@ -1,3 +1,8 @@
+:root {
+  --gap: 20px;
+  scrollbar-width: none;
+}
+
 *,
 *::before,
 *::after {
@@ -13,8 +18,9 @@ body {
   display: grid;
   grid-template-columns: 2fr 4fr;
   height: 100vh;
-  gap: 20px;
+  gap: var(--gap);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: hsl(40, 54%, 88%);
 }
 
 aside {
@@ -24,6 +30,8 @@ aside {
   background-image: url("https://tinyurl.com/wd5k9p2k");
   background-size: cover;
   transform-origin: center;
+  z-index: 1;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -38,7 +46,76 @@ aside {
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  background-color: white;
+  margin-left: calc(-1 * var(--gap));
+  margin-bottom: var(--gap);
+  margin-top: var(--gap);
+  padding: var(--gap);
+  padding-top: 0;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  gap: var(--gap);
+  padding: 0;
+}
+
+.inputs p {
+  grid-column: span 2;
+  margin: 0;
+  font-size: 18px;
+}
+
+.input {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+
+input {
+  border-radius: 3px;
+  border: 1px solid hsl(20, 0%, 70%);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: 1px solid blue;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.error {
+  outline: 1px solid red;
+}
+
+.input label {
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+button {
+  max-width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: hsl(20, 28%, 35%);
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 150ms linear;
+}
+
+button:hover {
+  background-color: hsl(20, 30%, 50%);
 }
