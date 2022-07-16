@@ -53,6 +53,7 @@ section {
 
 form {
   background-color: white;
+  /* background: linear-gradient(to right, white 30%, transparent 70%); */
   margin-left: calc(-1 * var(--gap));
   margin-bottom: var(--gap);
   margin-top: var(--gap);
