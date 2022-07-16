@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  height: 100vh;
+  gap: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://tinyurl.com/wd5k9p2k");
+  background-size: cover;
+  transform-origin: center;
+}
+
+.logo {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 15px 0;
+  letter-spacing: 5px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
