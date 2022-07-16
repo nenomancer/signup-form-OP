@@ -97,6 +97,13 @@ input:focus {
   outline: 1px solid red;
 }
 
+.error-msg::after {
+  content: "* Passwords must match";
+  display: block;
+  margin-top: 5px;
+  color: red;
+}
+
 .input label {
   text-transform: uppercase;
   cursor: pointer;

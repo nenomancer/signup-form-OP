@@ -4,9 +4,25 @@ const confirmPassInput = document.querySelector("[data-confirm-password]");
 
 let passValue = "";
 let confirmPassValue = "";
+let passIsMatched = false;
 
-const passMismatch = () => {
-  passInput.classList.add("error");
+const isPassMatching = () => {
+  if (passValue !== confirmPassValue) {
+    passInput.childNodes[3].classList.add("error");
+    passInput.classList.add("error-msg");
+    confirmPassInput.classList.add("error");
+    passIsMatched = false;
+  } else {
+    passInput.childNodes[3].classList.remove("error");
+    passInput.classList.remove("error-msg");
+    confirmPassInput.classList.remove("error");
+    passIsMatched = true;
+  }
+};
+
+const passMismatch = (str) => {
+  passInput.childNodes[3].classList.add("error");
+  passInput.classList.add("error-msg");
   confirmPassInput.classList.add("error");
 };
 
@@ -16,11 +32,9 @@ passInput.addEventListener("change", (e) => {
 
 confirmPassInput.addEventListener("change", (e) => {
   confirmPassValue = e.target.value;
-  if (passValue !== confirmPassValue) passMismatch();
-  console.log(passValue, confirmPassValue);
+  isPassMatching();
 });
 
 signupForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log("submitted");
+  if (!passIsMatched) e.preventDefault();
 });
